@@ -2,7 +2,7 @@
 
 as3-ical is an iCal parser written in ActionScript 3. Parsing works as specified in [RFC2445](http://www.ietf.org/rfc/rfc2445.txt).
 
-# Usage
+## Usage
 
 	import com.rra.ical.VCalendar;
 	// ...
@@ -18,11 +18,11 @@ as3-ical is an iCal parser written in ActionScript 3. Parsing works as specified
 		}
 	}
 
-# Features
+## Features
 
 TODO write a comprehensive list
 
-# Still missing
+## Still missing
 
  - tests! The test coverage is horrible
 
