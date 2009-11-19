@@ -29,5 +29,6 @@ TODO complete the features-list
 
  - tests! The test coverage is horrible
  - as3doc! The code is barely documented
+ - optimizations! There's plenty of room for improvements.
 
 TODO complete the what's-missing-list 
