@@ -20,7 +20,7 @@ as3-ical is an iCal parser written in ActionScript 3. Parsing works as specified
 
 ## Features
 
- - Parses ics files
+ - Parses ics files, both remote & local
  - Handles recurrences
 
 TODO complete the features-list

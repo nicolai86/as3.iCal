@@ -17,7 +17,7 @@ package com.rra.ical.tests
 {
 	import flexunit.framework.Assert;
 	
-	import com.rra.ical.VUtils;
+	import com.rra.ical.utils.VUtils;
 
 	public class VUtilsTest
 	{

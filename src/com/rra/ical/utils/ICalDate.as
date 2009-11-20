@@ -15,11 +15,9 @@
  */
 package com.rra.ical.utils
 {
-	import com.adobe.utils.DateUtil;
 	import com.adobe.utils.StringUtil;
 	
 	import flash.utils.Dictionary;
-	import com.rra.ical.VUtils;
 
 	public class ICalDate
 	{

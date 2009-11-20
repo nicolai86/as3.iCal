@@ -31,6 +31,7 @@ package com.rra.ical
 	
 	import mx.logging.ILogger;
 	import mx.logging.Log;
+	import com.rra.ical.utils.VUtils;
 
 	public class VCalendar extends EventDispatcher
 	{
