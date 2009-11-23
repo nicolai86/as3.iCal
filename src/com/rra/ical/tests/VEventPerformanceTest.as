@@ -17,6 +17,9 @@ package com.rra.ical.tests
 {
 	import com.rra.ical.VEvent;
 
+	/**
+	 * Simple performance test cases to be run with gskinners PerformanceTest class
+	 */
 	public class VEventPerformanceTest
 	{
 		public var iterations:uint = 6;

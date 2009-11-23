@@ -19,6 +19,9 @@ package com.rra.ical.tests
 	
 	import flash.utils.Dictionary;
 
+	/**
+	 * Simple performance test cases to be run with gskinners PerformanceTest class
+	 */
 	public class VUtilsPerformanceTest
 	{
 		public var iterations:uint = 6;
@@ -41,8 +44,6 @@ package com.rra.ical.tests
 				var description: Dictionary = VUtils.getValue("DESCRIPTION:", VEventTest.SIMPLE_EVENT);
 				var summary: Dictionary = VUtils.getValue("SUMMARY", VEventTest.SIMPLE_EVENT);
 				var rrule: Dictionary = VUtils.getValue("RRULE", VEventTest.SIMPLE_EVENT);
-				var exdate: Dictionary = VUtils.getValue("EXDATE", VEventTest.SIMPLE_EVENT);
-				var sequence: Dictionary = VUtils.getValue("SEQUENCE", VEventTest.SIMPLE_EVENT);
 				var url: Dictionary = VUtils.getValue("URL", VEventTest.SIMPLE_EVENT);
 				var uid: Dictionary = VUtils.getValue("UID", VEventTest.SIMPLE_EVENT);
 			}

@@ -149,7 +149,7 @@ package com.rra.ical
 						arr.push(other[i]);
 			} else {
 				// all day events!
-				if (dts["VALUE"] && dts["VALUE"] == "DATE") {
+				if (dts["VALUE"] && "DATE" == dts["VALUE"]) {
 					var days: int = dtend.getTime() - dtstart.getTime();
 					days /= 24 * 60 * 60 * 1000;
 					for (i = 0; i < days; ++i) {

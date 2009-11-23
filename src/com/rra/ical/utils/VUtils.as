@@ -24,8 +24,10 @@ package com.rra.ical.utils
 
 	public class VUtils
 	{
-		public static var DEFAULT_PROPERTIES: Array = ["DTEND", "DTSTAMP", "DTSTART",
-			"UID", "SUMMARY", "LOCATION", "URL"];
+		public static var PARSED_PROPERTIES: Array = 
+			["DTEND", "DTSTAMP", "DTSTART",
+			 "UID", "SUMMARY", "LOCATION", 
+			 "URL", "RRULE"];
 		
 		public static function parseIso8601(str: String): Date {
 			var dateArr: Array = [str.substr(0, 4), str.substr(4,2), str.substr(6, 2)];
@@ -34,41 +36,13 @@ package com.rra.ical.utils
 		}
 		
 		public static function allProperties(content: String): Dictionary {
-			var reg: RegExp = new RegExp('([A-Z]+)(;[^=]*=[^;:\n]*)*:([^\n]*)','g');
 			var dic: Dictionary = new Dictionary();
 			var pDic: Dictionary;
-			
-			for (var i: int = 0; i < DEFAULT_PROPERTIES.length; ++i) {
-				pDic = new Dictionary();
-				pDic[0] = "";
-				dic[DEFAULT_PROPERTIES[i]] = pDic;
+			for (var i: int = 0; i < PARSED_PROPERTIES.length; ++i) {
+				pDic = getValue(PARSED_PROPERTIES[i], content);
+				dic[PARSED_PROPERTIES[i]] = pDic;
 			}
 			
-			var matches: Array = null;
-			while( (matches = reg.exec(content)) != null ) {
-				var property: String = StringUtil.trim(matches[1]);
-				var value: String = StringUtil.trim(matches[3]);
-				
-				if (dic[property])
-					pDic = dic[property];
-				else
-					pDic = new Dictionary();
-				pDic[0] = value;
-				
-				var tab_params: String;
-				if (StringUtil.stringHasValue(matches[2])){ 
-					var params: Array = matches[2].substr(1).split(';');
-					var pair: Array;
-					var code: String='';
-					for(var k: uint =0;k<params.length;k++){
-						pair = params[k].split('=');
-						if(!pair[1]) 
-							pair[1]=pair[0];
-						pDic[pair[0].replace(/-/,'')] = pair[1];
-					}
-				}
-				dic[property] = pDic;
-			}
 			return dic;
 		}
 		

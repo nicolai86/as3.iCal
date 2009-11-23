@@ -46,7 +46,7 @@ package com.rra.ical.tests
 			"\n\nEND:VEVENT" +
 			"\n\nEND:VCALENDAR";
 		
-		private static var REPEATING_COUNT: String = "BEGIN:VEVENT" +
+		public static var REPEATING_COUNT: String = "BEGIN:VEVENT" +
 			"\n\nCREATED:20091027T122125Z" +
 			"\n\nUID:4D046357-86FE-45C0-8A67-1AC50D952A5B" +
 			"\n\nDTEND;TZID=Europe/Berlin:20091027T061500" +
@@ -75,7 +75,7 @@ package com.rra.ical.tests
 			"\n\nCREATED:20091116T104907Z" +
 			"\n\nEND:VEVENT";
 		
-		private static var ALL_DAY_EVENT: String = "BEGIN:VEVENT" +
+		public static var ALL_DAY_EVENT: String = "BEGIN:VEVENT" +
 			"\n\nCREATED:20091020T225538Z" +
 			"\n\nUID:C40A2B58-B8EC-4CC3-A26B-8033BDAA6D09" +
 			"\n\nDTEND;VALUE=DATE:20091029" +
@@ -100,7 +100,7 @@ package com.rra.ical.tests
 			}
 		}
 		
-		private static var SIMPLE_EVENT: String = "BEGIN:VEVENT\n\nTRANSP:OPAQUE"+
+		public static var SIMPLE_EVENT: String = "BEGIN:VEVENT\n\nTRANSP:OPAQUE"+
 			"\n\nDTEND;TZID=Europe/Berlin:20090904T160000" +
 			"\n\nUID:5773E02F-173F-4907-91E4-6EB79E7CDBAE" +
 			"\n\nDTSTAMP:20091006T223146Z" +
