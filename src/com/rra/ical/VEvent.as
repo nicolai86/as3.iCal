@@ -15,13 +15,14 @@
  */
 package com.rra.ical
 {
+	import com.adobe.utils.StringUtil;
 	import com.rra.ical.utils.ICalDate;
+	import com.rra.ical.utils.VUtils;
 	
 	import flash.utils.Dictionary;
 	
 	import mx.logging.ILogger;
 	import mx.logging.Log;
-	import com.rra.ical.utils.VUtils;
 
 	public class VEvent
 	{
@@ -84,12 +85,8 @@ package com.rra.ical
 				this._uid 	  	= p["UID"];
 				this._summary 	= p["SUMMARY"];
 				this._location	= p["LOCATION"];
-				
-				if (p["URL"])
-					this._url 	  	= p["URL"];
-				
-				if (p["DURATION"])
-					this._duration 	= p["DURATION"];
+				this._url 	  	= p["URL"];
+				this._duration 	= p["DURATION"];
 			}
 			
 			if (recurrence_count >= 0) {
@@ -123,8 +120,9 @@ package com.rra.ical
 			edic["URL"] = props["URL"][0];
 			
 			duration = (dtend.getTime() - dtstart.getTime()) / (1000 * 60);
-			if (props["RRULE"]) {
+			if (props["RRULE"] && StringUtil.stringHasValue(props["RRULE"][0])) {
 				var rrule: String = props["RRULE"][0]
+				
 				var p: Dictionary = ICalDate.parse_recurrence(rrule);
 				if (!p["INTERVAL"])
 					p["INTERVAL"] = 1;
