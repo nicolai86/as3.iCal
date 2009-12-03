@@ -120,6 +120,7 @@ package com.rra.ical
 			edic["URL"] = props["URL"][0];
 			
 			duration = (dtend.getTime() - dtstart.getTime()) / (1000 * 60);
+			
 			if (props["RRULE"] && StringUtil.stringHasValue(props["RRULE"][0])) {
 				var rrule: String = props["RRULE"][0]
 				
