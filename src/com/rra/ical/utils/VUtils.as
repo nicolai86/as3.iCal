@@ -27,7 +27,7 @@ package com.rra.ical.utils
 		public static var PARSED_PROPERTIES: Array = 
 			["DTEND", "DTSTAMP", "DTSTART",
 			 "UID", "SUMMARY", "LOCATION", 
-			 "URL", "RRULE", "DURATION"];
+			 "URL", "RRULE", "DURATION", "DESCRIPTION"];
 		
 		public static function parseIso8601(str: String): Date {
 			var dateArr: Array = [str.substr(0, 4), str.substr(4,2), str.substr(6, 2)];
