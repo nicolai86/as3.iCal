@@ -90,6 +90,7 @@ package com.rra.ical
 				this._location	= p["LOCATION"];
 				this._url 	  	= p["URL"];
 				this._duration 	= p["DURATION"];
+                                this._description = p["DESCRIPTION"];
 			}
 			
 			if (recurrence_count >= 0) {
