@@ -29,7 +29,10 @@ package com.rra.ical
 		private static var log: ILogger = Log.getLogger("com.rra.ical.VEvent");
 		
 		private var _description: String;
-		
+		public function get description(): String {
+			return this._description;
+		}
+
 		private var _url: String;
 		public function get url(): String {
 			return this._url;
@@ -118,6 +121,7 @@ package com.rra.ical
 			edic["SUMMARY"] = props["SUMMARY"][0];
 			edic["LOCATION"] = props["LOCATION"][0];
 			edic["URL"] = props["URL"][0];
+                        edic["DESCRIPTION"] = props["DESCRIPTION"][0];
 			
 			duration = (dtend.getTime() - dtstart.getTime()) / (1000 * 60);
 			
